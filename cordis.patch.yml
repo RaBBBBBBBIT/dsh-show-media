@@ -1,0 +1,5 @@
+# dsh-show-media — conversation media card.
+# One host row. The browser half is picked up through dsh.client.
+- insert:
+    - id: dsh-show-media
+      name: dsh-show-media
