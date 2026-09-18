@@ -111,5 +111,6 @@ describe("package shape", () => {
     assert.match(source, /remoteSession\.attachment\(\{ sessionId: sessionId, attachmentId: attachmentId \}\)/);
     assert.match(source, /if \(attachmentId\) \{/);
     assert.match(source, /remote: remote/);
+    assert.match(source, /const inject = \["slots", "remote"\]/);
   });
 });

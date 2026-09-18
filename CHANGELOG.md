@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.1.3
+
+- Declare the client `remote` injection required by the session-attachment
+  preview path, preventing Cordis from rejecting `remote.session` at runtime.
+
 ## 0.1.2
 
 - Read image attachments through the authenticated session RPC directly, so
