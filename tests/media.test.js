@@ -105,4 +105,11 @@ describe("package shape", () => {
     assert.match(source, /ctx\.get\("systemPrompt"\)\?\.section/);
     assert.doesNotMatch(source, /ctx\.systemPrompt/);
   });
+
+  it("reads image attachments through the remote session API before bindings", async () => {
+    const source = await readFile(new URL("../lib/client.js", import.meta.url), "utf8");
+    assert.match(source, /remoteSession\.attachment\(\{ sessionId: sessionId, attachmentId: attachmentId \}\)/);
+    assert.match(source, /if \(attachmentId\) \{/);
+    assert.match(source, /remote: remote/);
+  });
 });

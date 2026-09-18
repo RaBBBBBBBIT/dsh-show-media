@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.1.2
+
+- Read image attachments through the authenticated session RPC directly, so
+  cards still render after reconnects, history reloads, or browser-use child
+  sessions where an in-memory session binding is unavailable.
+- Keep the bound-session reader as a compatibility fallback.
+
 ## 0.1.1
 
 - Fix loading on newer DSH Cordis runtimes by declaring the `webServer`
