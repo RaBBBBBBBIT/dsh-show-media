@@ -1,6 +1,6 @@
 {
   "name": "dsh-show-media",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Show a local image or short video inside the current DeepSeek Harness conversation card, with click-to-preview. Does not replace the official read_image model path.",
   "type": "module",
   "main": "lib/index.js",

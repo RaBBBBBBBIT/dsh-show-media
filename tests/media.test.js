@@ -101,7 +101,7 @@ describe("package shape", () => {
 
   it("declares the web server service and avoids direct optional-service access", async () => {
     const source = await readFile(new URL("../lib/index.js", import.meta.url), "utf8");
-    assert.match(source, /export const inject = \["tools", "fs", "webServer"\]/);
+    assert.match(source, /export const inject = \["tools", "fs", "connection", "webServer"\]/);
     assert.match(source, /ctx\.get\("systemPrompt"\)\?\.section/);
     assert.doesNotMatch(source, /ctx\.systemPrompt/);
   });

@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.6
+
+- Declare the Host `connection` service as well as `webServer`, so the custom
+  original-file RPC route is actually registered. This fixes video previews
+  failing with `POST /dsh-show-media/load` HTTP 405 behind the web deployment.
+
 ## 0.1.5
 
 - Remove rounded corners from the full-size "Preview original" image and video
