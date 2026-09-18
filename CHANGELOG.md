@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.4
+
+- Declare the namespaced `remote.session` client injection, matching DSH's
+  official Remote consumers. Declaring only the parent `remote` service is not
+  sufficient for Cordis property access.
+
 ## 0.1.3
 
 - Declare the client `remote` injection required by the session-attachment
