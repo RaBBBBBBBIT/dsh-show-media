@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.1.5
+
+- Remove rounded corners from the full-size "Preview original" image and video
+  lightbox while keeping the conversation-card thumbnail styling unchanged.
+
 ## 0.1.4
 
 - Declare the namespaced `remote.session` client injection, matching DSH's

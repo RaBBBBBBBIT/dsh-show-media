@@ -113,4 +113,11 @@ describe("package shape", () => {
     assert.match(source, /remote: remote/);
     assert.match(source, /const inject = \["slots", "remote", "remote\.session"\]/);
   });
+
+  it("keeps full-size previews square while card thumbnails stay rounded", async () => {
+    const source = await readFile(new URL("../lib/client.js", import.meta.url), "utf8");
+    assert.match(source, /\.dsm-pic,\.dsm-vid\{[^\n]*border-radius:8px/);
+    assert.equal((source.match(/border-radius:0/g) || []).length, 2);
+    assert.doesNotMatch(source, /max-width:98vw[^\n]*border-radius:12px/);
+  });
 });
