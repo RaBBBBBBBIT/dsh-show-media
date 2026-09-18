@@ -22,7 +22,7 @@ Conversation markdown still will not render a local `file://` or Windows path. O
 From a clone (no build step — `lib/` is the source):
 
 ```sh
-dsh plugin --profile desktop add github:NecromanAlbert/dsh-show-media
+dsh plugin --profile desktop add github:RaBBBBBBBIT/dsh-show-media
 ```
 
 Or a local checkout:
@@ -51,6 +51,14 @@ Relative paths resolve against the session workspace.
 ```json
 { "file_path": "C:\\path\\to\\photo.webp" }
 ```
+
+### DSH compatibility
+
+This fork is maintained for current DSH Cordis runtimes. The host half
+declares `webServer` for the Connection RPC registrar and reads the optional
+`systemPrompt` service through `ctx.get()`, avoiding the runtime error
+`cannot get property "systemPrompt" without inject` seen with the original
+0.1.0 package on newer DSH builds.
 
 ## What this is not
 

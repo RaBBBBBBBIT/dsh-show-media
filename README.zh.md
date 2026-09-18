@@ -22,7 +22,7 @@
 从 GitHub 装（无构建步骤，`lib/` 就是源码）：
 
 ```sh
-dsh plugin --profile desktop add github:NecromanAlbert/dsh-show-media
+dsh plugin --profile desktop add github:RaBBBBBBBIT/dsh-show-media
 ```
 
 或本地目录：
@@ -51,6 +51,12 @@ dsh plugin --profile desktop add /path/to/dsh-show-media
 ```json
 { "file_path": "C:\\path\\to\\photo.webp" }
 ```
+
+### DSH 兼容性
+
+这个 fork 面向较新的 DSH Cordis 运行时维护。Host 端明确声明了
+`webServer`，并通过 `ctx.get()` 读取可选的 `systemPrompt` 服务，避免原版
+0.1.0 在较新 DSH 中触发 `cannot get property "systemPrompt" without inject`。
 
 ## 不是什么
 

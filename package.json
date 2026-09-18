@@ -1,6 +1,6 @@
 {
   "name": "dsh-show-media",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Show a local image or short video inside the current DeepSeek Harness conversation card, with click-to-preview. Does not replace the official read_image model path.",
   "type": "module",
   "main": "lib/index.js",
@@ -63,12 +63,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/NecromanAlbert/dsh-show-media.git"
+    "url": "git+https://github.com/RaBBBBBBBIT/dsh-show-media.git"
   },
   "bugs": {
-    "url": "https://github.com/NecromanAlbert/dsh-show-media/issues"
+    "url": "https://github.com/RaBBBBBBBIT/dsh-show-media/issues"
   },
-  "homepage": "https://github.com/NecromanAlbert/dsh-show-media#readme",
+  "homepage": "https://github.com/RaBBBBBBBIT/dsh-show-media#readme",
   "publishConfig": {
     "access": "public"
   }

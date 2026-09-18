@@ -98,4 +98,11 @@ describe("package shape", () => {
     assert.equal(pkg.dsh.client.platform, "web");
     assert.equal(pkg.exports["./client"].default, "./lib/client.js");
   });
+
+  it("declares the web server service and avoids direct optional-service access", async () => {
+    const source = await readFile(new URL("../lib/index.js", import.meta.url), "utf8");
+    assert.match(source, /export const inject = \["tools", "fs", "webServer"\]/);
+    assert.match(source, /ctx\.get\("systemPrompt"\)\?\.section/);
+    assert.doesNotMatch(source, /ctx\.systemPrompt/);
+  });
 });
