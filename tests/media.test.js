@@ -99,11 +99,22 @@ describe("package shape", () => {
     assert.equal(pkg.exports["./client"].default, "./lib/client.js");
   });
 
-  it("declares the web server service and avoids direct optional-service access", async () => {
+  it("registers an authenticated exact fetch route without direct webServer injection", async () => {
     const source = await readFile(new URL("../lib/index.js", import.meta.url), "utf8");
-    assert.match(source, /export const inject = \["tools", "fs", "connection", "webServer"\]/);
+    assert.match(source, /export const inject = \["tools", "fs", "connection"\]/);
+    assert.match(source, /ctx\.connection\.fetch\.register\(\{/);
+    assert.match(source, /path: FETCH_PATH/);
+    assert.doesNotMatch(source, /rpc\.handle/);
+    assert.doesNotMatch(source, /"webServer"/);
     assert.match(source, /ctx\.get\("systemPrompt"\)\?\.section/);
     assert.doesNotMatch(source, /ctx\.systemPrompt/);
+  });
+
+  it("loads original media from the same-origin api route", async () => {
+    const source = await readFile(new URL("../lib/client.js", import.meta.url), "utf8");
+    assert.match(source, /const FETCH_PATH = "\/api\/dsh-show-media"/);
+    assert.match(source, /fetch\(FETCH_PATH, \{/);
+    assert.doesNotMatch(source, /rpc\.call/);
   });
 
   it("reads image attachments through the remote session API before bindings", async () => {

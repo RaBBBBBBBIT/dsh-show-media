@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.7
+
+- Replace the custom Connection RPC channel with an authenticated exact
+  `POST /api/dsh-show-media` Fetch route. This avoids the DSH 0.1.5 Cordis
+  `webServer` injection failure while preserving original video previews.
+- Load video bytes through same-origin `fetch`, so the existing DSH session
+  cookie and reverse-proxy authentication continue to protect the request.
+
 ## 0.1.6
 
 - Declare the Host `connection` service as well as `webServer`, so the custom
