@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.1.8
+
+- Declare compatibility with the DSH 0.2.0 release-candidate APIs used by
+  the authenticated original-media route. No runtime code changes.
+
 ## 0.1.7
 
 - Replace the custom Connection RPC channel with an authenticated exact
